@@ -1,0 +1,18 @@
+USE sakila;
+SELECT * FROM actor;
+SELECT * FROM actor WHERE last_name = "CAGE";
+SELECT * FROM actor WHERE first_name != "NICK" OR "ZERO";
+SELECT * FROM actor WHERE first_name IN ("NICK", "JOHNNY", "JAMES", "MORGAN", "WHOOPI");
+SELECT * FROM actor WHERE actor_id BETWEEN 50 AND 150;
+SELECT * FROM actor WHERE first_name LIKE 'C%';
+SELECT * FROM actor ORDER BY first_name ASC;
+SELECT * FROM actor ORDER BY last_name DESC;
+SELECT COUNT(*) FROM actor;
+SELECT COUNT(DISTINCT first_name) FROM actor;
+SELECT * FROM film_category;
+SELECT film.film_id, film.title, film_category.category_id, category.name FROM film INNER JOIN film_category ON film.film_id=film_category.film_id INNER JOIN category ON film_category.category_id=category.category_id WHERE film_category.category_id = 11;
+DELETE FROM film_actor WHERE actor_id = 201;
+DELETE FROM actor WHERE actor_id = 201;
+SELECT * FROM actor;
+SELECT * FROM category;
+SELECT film.film_id, film.title, film_category.category_id, category.name FROM film INNER JOIN film_category ON film.film_id=film_category.film_id INNER JOIN category ON film_category.category_id=category.category_id WHERE film_category.category_id = 11;
